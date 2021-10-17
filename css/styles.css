@@ -1,282 +1,203 @@
-@charset "utf-8";
-
-/*--------------共通部分------------*/
-html,body,div,span,iframe,h1,h2,h3,h4,h5,p,a,img,ul,li,table,tr,th,td,tbody,footer,header,main,nav,section {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: normal;
-    list-style: none;
-    text-decoration: none;
-  }
-  
-html {
-    font-size: 100%;
-}
-
 body {
-    font-family: "yu Gothic Medimu", "游ゴシック Medium", YuGothic, "游ゴシック体","ヒラギノ角ゴ Pro W3", sans-serif;
-    line-height: 1.7;
-          color: rgb(252, 252, 252);
+  margin: 0;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color: #333;
 }
 
-a {
-     text-decoration: none;
+.message {
+  width: 300px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  background: #2c2c2c;
+  color: #ddd;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  
+  animation: popup 5s forwards;
+  /* display: none; */
+  visibility: hidden;
 }
 
-img {
-    max-width: 100%;
+/* @keyframes popup {
+  0% {
+    transform: translateY(20px);
+    visibility: visible;
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  20%, 80% {
+    transform: none;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20px);
+    visibility: hidden;
+    opacity: 0;
+  }
+} */
+
+
+header {
+  background: #fff;
+  background-image:src="css/nousnou-iwasaki-myPzH34VYK4-unsplash.jpg";
+  color: #0505055d;
+  text-align: center;
+  padding-top: 64px;
 }
 
-/*--------------header------------*/
-
-.logo{
-    width: 210px;
-    margin-top: 5px;
+header h1,
+header p {
+  margin: 0;
 }
 
-.main-nav{
+header img {
+  width: 280px;
+  vertical-align: bottom;
+}
+
+.btn {
+  text-decoration: none;
+  background: rgb(243, 215, 88);
+  color: #0505055d;
+  display: block;
+  width: 140px;
+  line-height: 44px;
+  margin: 40px auto 48px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.features img {
+  width: 100%;
+}
+
+.features > h1 {
+  text-align: center;
+  padding: 64px;
+  font-weight: normal;
+}
+
+.features .container {
+  margin: 0 32px;
+}
+
+.features p {
+  line-height: 1.8;
+}
+
+.features section {
+  padding-bottom: 64px;
+}
+
+.members {
+  background: #f2f2f3;
+}
+
+.members > h1 {
+  text-align: center;
+  padding: 64px;
+  font-weight: normal;
+}
+
+.members ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.members img {
+  width: 160px;
+  border-radius: 50%;
+}
+
+.members h2 {
+  font-size: 20px;
+}
+
+.members li {
+  padding-bottom: 64px;
+}
+
+.call-to-action {
+  background: #0505055d;
+  color: #fff;
+  text-align: center;
+  padding: 64px 0;
+}
+
+.call-to-action h1 {
+  font-weight: normal;
+}
+
+.call-to-action .btn {
+  margin: 0 auto;
+}
+
+footer {
+  padding: 64px 0;
+  background: #323135;
+  color: #98969c;
+  text-align: center;
+}
+
+
+/* ------------------------------------------------------------------------- */
+@media (min-width: 900px) {
+  header .container {
     display: flex;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    margin-top: 34px;
-    list-style: none;
-}
+    width: 800px;
+    margin: 0 auto;
+  }
 
-.main-nav li{
-    margin-left: 36px;
-}
+  header .info {
+    width: 60%;
+    align-self: center;
+  }
 
-.main-nav a {
-    color: rgb(255, 255, 255);
-}
+  header .pic {
+    width: 40%;
+  }
 
-.main-nav a :hover{
-    color: #0bd;
-}
+  .features .container {
+    width: 800px;
+    margin: 0 auto;
+  }
 
-.page-header{
-    display: flex;
-    justify-content: space-between;
-}
-
-.wrapper{
-    max-width: 1100px;
-    margin:  0 auto;
-    padding: 0 4%;
-}
-
-/*------HOME---------*/
-.home-content {
-    text-align: center;
-    margin-top: 5%;
-}
-
-.home-content p {
-    font-size:  1.125rem;
-    margin: 10px 0 42px;
-}
-
-/*見出し*/
-.page-title {
-    font-size: 3rem;
-    font-family: 'Philosopher', serif ;
-    text-transform: uppercase;
-    font-weight: normal;
-}
-
-/*ボタン*/
-.button{
-    font-size: 1.375rem;
-    background-origin: #0bd;
-    color: #fff;
-    border-radius: 5px;
-    padding: 18px 32px;
-}
-
-.button:hover{
-    background: #0090aa;
-}
-
-/*------背景画像--------*/
-
-.big-bg{
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-}
-
-#home {
-    background-image: url(../images/benjamin-davies-JrZ1yE1PjQ0-unsplash.jpg) ;
-    /*background-color: rgb(199, 196, 193);*/
-    min-height: 100vh;
-}
-
-#home .page-title{
-    text-transform: none;
-}
-
-.grid{
-    display: grid;
-    gap: 26px;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    margin-top: 6%;
-    margin-bottom: 50px;
-    color: rgb(0, 0, 0);
-
-}
-
-/*-----Contakt-------*/
-#contact{
-    background-image: url(../images/kelly-sikkema-YYpK24V55-w-unsplash.jpg);
-    min-height: 100vh;
-}
-
-/*-----form---------PHPを導入しないのであれば不要*/
-form div{
-    margin-bottom: 14px;
-}
-label{
-    font-size: 1.125rem;
-    margin-bottom: 10px;
-    display: block;
-}
-input[type="text"],
-input[type="email"],
-textarea{
-    background: rgba(255, 255, 255, .5);
-    border: 1px #fff solid;
-    padding: 10px;
-    font-size: large;
-}
-input[type="text"],
-input[type="email"]{
-    width: 100%;
-    max-width: 240px;
-}
-textarea{
-    width: 100%;
-    max-width: 480px;
-    height: 6rem;
-}
-input[type="submit"]{
-    border: none;
-    cursor: pointer;
-    line-height: 1;
-}
-
-/*----------店舗・地図情報---------------*/
- .location{
-    padding: 4% 0;
-}
-#location .wrapper{
-    display: flex;
-    justify-content: space-between;
-}
-.location-info{
-    width: 22%;
-}
-.location-info p{
-    padding: 12px 10px;
-}
-.location-map{
-    width: 74%;
-}
-
-/* -----iframe---------- */
-iframe{
-    width: 100%;
-} 
-
-
-/* --sns-- */
-
-#sns{
-    background: rgba(255, 228, 74, 0.467);
-    padding: 4% 0;
-}
-
-#sns .wrapper{
+  .features section {
     display: flex;
     justify-content: space-between;
-}
+  }
 
-#sns .sub-title{
-    margin-bottom: 30px;
-}
+  .features section:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 
-.sns-box{
-    width: 30%;
-}
+  .features .pic {
+    width: 50%;
+  }
 
+  .features .info {
+    width: calc(50% - 32px);
+  }
 
+  .members ul {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
 
-
-/*----------モバイル版------------------*/
-@media (max-width: 600px){
-
-    .wrapper{
-        margin-top: 20px;
-    }
-    .page-title{
-        font-size: 2.5rem;
-    }
-
-    /*--head--*/
-    .main-nav{
-        font-size: 1rem;
-        margin-top: 10px;
-    }
-    .main-nav li{
-        margin:  0 20px;
-    }
-
-    /*--home--*/
-    .home-content{
-        margin-top: 20%;
-    }
-
-    .page-header{
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/*-----form---------PHPを導入しないのであれば不要*/
-input[type="text"],
-input[type="email"],
-textarea{
-    max-width: 100%;
-}
-/*-----Contact-----PHPを導入しないのであれば不要*/
-#contact .page-title{
-    margin-top: 40px;
-}
-
-/* ------店舗情報・地図--/sns---------- */
-
-#location .wrapper,
-#sns .wrapper{
-    flex-direction: column;
-}
-.location-info,
-.location-map,
-.sns-box{
-    width: 100%;
-}
-.sns-box{
-    margin-bottom: 30px;
-}
-
-
-
-/*------------footer--------------------*/
-footer{
-    background: #432;
-    text-align: center;
-    padding: 26px 0;
-}
-footer p {
-    color: #fff;
-    font-size: 0.875rem;
+  .members li {
+    width: 250px;
+  }
 }
