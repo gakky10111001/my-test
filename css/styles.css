@@ -44,7 +44,8 @@ body {
 header {
   background: #fff;
   background-image:src="css/nousnou-iwasaki-myPzH34VYK4-unsplash.jpg";
-  color: #0505055d;
+  /* color: #0505055d; */
+  font-size: 30px;
   text-align: center;
   padding-top: 64px;
 }
